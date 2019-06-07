@@ -8,11 +8,14 @@ class TestExample:
         self.average_time = 0
         self.current_time = 0
 
-    def setup(self, subfunction, data):
+    def setup(self, subfunction, data, return_out=False):
         if subfunction is not None:
             self.subfunction_class = subfunction
             self.subfunction_class.setup()
-            self.subfunction = self.subfunction_class.run_no_return
+            if return_out:
+                self.subfunction = self.subfunction_class.run
+            else:
+                self.subfunction = self.subfunction_class.run_no_return
         self.data = data
         self.average_time = 0
         self.current_time = 0
