@@ -6,7 +6,7 @@ from Testees import TestListComp, TestListCompAny, TestMapAny, TestMapDeque, Tes
 from TestingFunctions import FunctionExponent, FunctionLargeMath, FunctionPygameCircle
 
 
-DATA_SIZE = 5000
+DATA_SIZE = 50000
 REPETITIONS = 100
 DATA = list(range(DATA_SIZE))
 
@@ -39,11 +39,14 @@ for test_func in TEST_FUNCTIONS:
     Results[-1].sort()
 
 print("DATA SIZE = " + str(DATA_SIZE))
+print()
 print("REPETITIONS = " + str(REPETITIONS))
 print()
 Results[0].sort()
-print("Overall Results")
+print("### Overall Results")
+print()
 print("|             Test             |         Average Time         |")
+print("|------------------------------|------------------------------|")
 # print(Results)
 for j in range(len(Results[0])):
     # print(Results[0][j][0])
@@ -51,7 +54,10 @@ for j in range(len(Results[0])):
     print("|%-30s|%-30f|" % (Results[0][j][1], Results[0][j][0] / len(TEST_FUNCTIONS)))
 
 for i in range(len(TEST_FUNCTIONS)):
-    print("Results of Function " + TEST_FUNCTIONS[i].__class__.__name__)
+    print()
+    print("### Results of Function " + TEST_FUNCTIONS[i].__class__.__name__)
+    print()
     print("|             Test             |         Average Time         |")
+    print("|------------------------------|------------------------------|")
     for j in range(len(Results[i+1])):
         print("|%-30s|%-30f|" % (Results[i+1][j][1], Results[i+1][j][0]))
