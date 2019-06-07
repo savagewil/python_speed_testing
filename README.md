@@ -3,6 +3,7 @@ Will provide an architecture for speed testing for different python components
 
 # One Example of a Test
 DATA SIZE = 1000
+
 REPETITIONS = 20
 
 ### Overall Results
