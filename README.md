@@ -6,7 +6,9 @@ DATA SIZE = 1000
 REPETITIONS = 20
 
 Overall Results
+
 |             Test             |         Average Time         |
+|-----|-----|
 |TestMapDeque                  |0.004902                      |
 |TestForLoop                   |0.005049                      |
 |TestListComp                  |0.005275                      |
@@ -15,6 +17,8 @@ Overall Results
 |TestMapList                   |0.005601                      |
 |TestForLoopListAppend         |0.005824                      |
 |TestForLoopListAppend         |0.006069                      |
+
+
 Results of Function FunctionExponent
 |             Test             |         Average Time         |
 |TestMapList                   |0.009172                      |
