@@ -1,7 +1,7 @@
 from Testees.TestExample import TestExample
 
 
-class TestForLoopListAppend(TestExample):
+class TestForLoopListPrebuilt(TestExample):
     def run(self):
 
         LIST = [0] * len(self.data)

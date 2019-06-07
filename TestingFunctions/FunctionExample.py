@@ -8,6 +8,9 @@ class FunctionExample:
     def run(self, data):
         pass
 
+    def __str__(self):
+        return str(self.__class__.__name__)
+
     def run_no_return(self, data):
         pass
 

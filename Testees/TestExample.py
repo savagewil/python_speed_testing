@@ -20,6 +20,9 @@ class TestExample:
         self.average_time = 0
         self.current_time = 0
 
+    def __str__(self):
+        return str(self.__class__.__name__)
+
     def run(self):
         pass
 
