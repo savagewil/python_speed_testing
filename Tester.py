@@ -1,6 +1,6 @@
 DATA_SIZE = 40000
 REPETITIONS = 250
-RETURN = True
+RETURN = False
 from Testees import TestForLoop, TestForLoopListAppend, TestForLoopListPrebuilt
 from Testees import TestListComp, TestListCompAny, TestMapAny, TestMapDeque, TestMapList
 
@@ -19,7 +19,7 @@ def file_exists(file_name):
 
 
 data_file_index = 0
-data_file = "./Results/result_%d_%d_%d.md" % (DATA_SIZE, REPETITIONS, data_file_index)
+data_file = "./Results"+"/Returning" if RETURN else "" +"/result_%d_%d_%d.md" % (DATA_SIZE, REPETITIONS, data_file_index)
 while file_exists(data_file):
     data_file_index += 1
     data_file = "./Results/result_%d_%d_%d.md" % (DATA_SIZE, REPETITIONS, data_file_index)
@@ -35,10 +35,7 @@ def print_write(string=""):
 DATA = list(range(DATA_SIZE))
 if not RETURN:
     TESTEES = [TestForLoop.TestForLoop(),
-               TestForLoopListAppend.TestForLoopListAppend(),
-               TestForLoopListPrebuilt.TestForLoopListPrebuilt(),
                TestListComp.TestListComp(),
-               TestListCompAny.TestListCompAny(),
                TestMapAny.TestMapAny(),
                TestMapDeque.TestMapDeque(),
                TestMapList.TestMapList()]
