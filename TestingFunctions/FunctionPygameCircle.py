@@ -32,7 +32,6 @@ class FunctionPygameCircle(FunctionExample):
 
     def reset(self):
         pygame.display.flip()
-        pygame.time.delay(10)
         self.screen.fill([0, 0, 0])
 
     def close(self):

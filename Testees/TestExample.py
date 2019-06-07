@@ -35,6 +35,7 @@ class TestExample:
     def end_time(self):
         self.average_time += time.time() - self.current_time
 
+
     def __eq__(self, other):
         return self.time == other.time
 
