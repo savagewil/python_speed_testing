@@ -1,4 +1,4 @@
-DATA_SIZE = 40000
+DATA_SIZE = 60000
 REPETITIONS = 250
 RETURN = False
 from Testees import TestForLoop, TestForLoopListAppend, TestForLoopListPrebuilt
@@ -15,7 +15,12 @@ def file_exists(file_name):
         x.close()
         return True
     except Exception:
-        return False
+        try:
+            x = open(data_file, 'w')
+            x.close()
+            return False
+        except Exception:
+            return True
 
 
 data_file_index = 0
@@ -34,20 +39,21 @@ def print_write(string=""):
 
 DATA = list(range(DATA_SIZE))
 if not RETURN:
-    TESTEES = [TestForLoop.TestForLoop(),
-               TestListComp.TestListComp(),
+    TESTEES = [TestListComp.TestListComp(),
                TestMapAny.TestMapAny(),
-               TestMapDeque.TestMapDeque(),
                TestMapList.TestMapList()]
+    TEST_FUNCTIONS = [FunctionLargeMath.FunctionBigMath(),
+                      FunctionPygameCircle.FunctionPygameCircle(DATA_SIZE),
+                      FunctionSigmoid.FunctionSigmoid(),
+                      FunctionSquared.FunctionSquared(),
+                      FunctionExample.FunctionExample()]
 else:
     TESTEES = [TestListComp.TestListComp(),
                TestMapList.TestMapList()]
-
-TEST_FUNCTIONS = [FunctionLargeMath.FunctionBigMath(),
-                  FunctionPygameCircle.FunctionPygameCircle(DATA_SIZE),
-                  FunctionSigmoid.FunctionSigmoid(),
-                  FunctionSquared.FunctionSquared(),
-                  FunctionExample.FunctionExample()]
+    TEST_FUNCTIONS = [FunctionLargeMath.FunctionBigMath(),
+                      FunctionSigmoid.FunctionSigmoid(),
+                      FunctionSquared.FunctionSquared(),
+                      FunctionExample.FunctionExample()]
 
 print_write("DATA SIZE = " + str(DATA_SIZE))
 print_write()
