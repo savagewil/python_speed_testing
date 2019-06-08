@@ -1,5 +1,5 @@
-DATA_SIZE = 60000
-REPETITIONS = 250
+DATA_SIZE = 100000
+REPETITIONS = 500
 RETURN = False
 from Testees import TestForLoop, TestForLoopListAppend, TestForLoopListPrebuilt
 from Testees import TestListComp, TestListCompAny, TestMapAny, TestMapDeque, TestMapList
@@ -39,8 +39,7 @@ def print_write(string=""):
 
 DATA = list(range(DATA_SIZE))
 if not RETURN:
-    TESTEES = [TestListComp.TestListComp(),
-               TestMapAny.TestMapAny(),
+    TESTEES = [TestMapAny.TestMapAny(),
                TestMapList.TestMapList()]
     TEST_FUNCTIONS = [FunctionLargeMath.FunctionBigMath(),
                       FunctionPygameCircle.FunctionPygameCircle(DATA_SIZE),
